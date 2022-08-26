@@ -19,6 +19,10 @@ export const ColorModeContext = createContext<IColorModeContext>({
   toggleColorMode: () => {},
 });
 
+//custom hook to use context
+export const useColorMode = () => useContext(ColorModeContext);
+
+
 export const ColorModeContextProvider: FC<PropsWithChildren<{}>> = (props) => {
   const [mode, setMode] = useState<"light" | "dark">("light");
   const colorMode = useMemo(
@@ -42,5 +46,3 @@ export const ColorModeContextProvider: FC<PropsWithChildren<{}>> = (props) => {
     </ColorModeContext.Provider>
   );
 };
-
-export const useColorMode = () => useContext(ColorModeContext);

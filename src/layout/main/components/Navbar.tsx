@@ -12,8 +12,13 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ThemeToggleButton from "./ThemeToggleButton";
+import { Link } from "react-router-dom";
 
-const pages = ["About", "Projects", "Contact"];
+const pages = [
+  { name: "About", link: "/about" },
+  { name: "Projects", link: "/projects" },
+  { name: "Contact", link: "/contact" },
+];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -33,7 +38,13 @@ const Navbar = () => {
           <Toolbar disableGutters>
             <Typography
               noWrap
-              sx={{ display: { xs: "none", md: "flex" } }}
+              sx={{
+                display: { xs: "none", md: "flex" },
+                color: "inherit",
+                textDecoration: "inherit",
+              }}
+              component={Link}
+              to="/"
             >
               Shanta
             </Typography>
@@ -46,16 +57,16 @@ const Navbar = () => {
             >
               {pages.map((page) => (
                 <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
+                  key={page.name}
+                  component={Link}
+                  to={page.link}
                   sx={{
                     my: 2,
                     color: "white",
                     display: "block",
-                    
                   }}
                 >
-                  {page}
+                  {page.name}
                 </Button>
               ))}
               <ThemeToggleButton />
@@ -91,15 +102,14 @@ const Navbar = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page.name}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
 
             <Typography
-              variant="h5"
               noWrap
               component="a"
               href=""
