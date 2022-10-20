@@ -64,6 +64,7 @@ const Navbar = () => {
                     my: 2,
                     color: "white",
                     display: "block",
+                 
                   }}
                 >
                   {page.name}

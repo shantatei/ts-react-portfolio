@@ -5,8 +5,7 @@ const light = createTheme({
     mode: "light",
     primary: {
       main: '#073391',
-    }
-
+    },
   },
 });
 
