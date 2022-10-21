@@ -35,7 +35,7 @@ const Navbar = () => {
     <>
       <AppBar position="fixed">
         <Container maxWidth="xl">
-          <Toolbar disableGutters>
+          <Toolbar disableGutters >
             <Typography
               noWrap
               sx={{
@@ -62,9 +62,8 @@ const Navbar = () => {
                   to={page.link}
                   sx={{
                     my: 2,
-                    color: "white",
+                    color: "inherit",
                     display: "block",
-                 
                   }}
                 >
                   {page.name}
