@@ -13,6 +13,7 @@ const light = createTheme({
       main: '#f7f8fa',      
       contrastText: '#0f0f0f', 
     },
+    
   },
 });
 
