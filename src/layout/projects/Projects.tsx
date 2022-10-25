@@ -1,12 +1,15 @@
 import React from "react";
-import {
-  Typography,
-  Stack,
-  Grid,
-} from "@mui/material";
+import { Typography, Stack, Grid } from "@mui/material";
 import ProjectCard from "./components/ProjectCard";
 
-const projects= [
+export interface Project {
+  name: string;
+  description: string;
+  githubLink: string;
+  tags: string[];
+}
+
+const projects: Project[] = [
   {
     name: "MuseTime",
     description: "Year 1.1 Music App Project",
@@ -29,21 +32,24 @@ const projects= [
     name: "TradeSellBuy",
     description: "Year 2.1 E-Commerce Website Project",
     githubLink: "https://github.com/shantatei/tsb-frontend",
-    tags: ["React", "Laravel","Redux"],
+    tags: ["React", "Laravel", "Redux"],
   },
 ];
 
 const Projects = () => {
   return (
-    <Stack justifyContent="center" alignItems="center" mt={2}>
+    <Stack
+      id="projects"
+      justifyContent="center"
+      alignItems="center"
+      sx={{ minHeight: "100vh" }}
+    >
       <Typography variant="h4">Projects</Typography>
       <Grid container spacing="10" sx={{ maxWidth: "80%" }} mt={2}>
         {projects.map((project) => {
           return (
             <Grid item key={project.name} lg={4} md={6} xs={12}>
-              <ProjectCard
-                project={project}
-              />
+              <ProjectCard project={project} />
             </Grid>
           );
         })}

@@ -7,8 +7,13 @@ import {
   CardActionArea,
 } from "@mui/material";
 import { useColorMode } from "../../../context/ColorModeContext";
+import { Project } from "../Projects";
 
-const ProjectCard = ({ project }: any) => {
+interface ProjectProps {
+  project : Project
+}
+
+const ProjectCard = ({project}: ProjectProps) => {
   const { mode } = useColorMode();
   const isDark = mode === "dark";
 

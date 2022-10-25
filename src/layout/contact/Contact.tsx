@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import { Stack, Typography } from "@mui/material";
 
 const Contact = () => {
   return (
-    <div>Contact</div>
-  )
-}
+    <Stack
+      id="contact"
+      sx={{ minHeight: "100vh" }}
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Typography variant="h4">Contact</Typography>
+    </Stack>
+  );
+};
 
-export default Contact
+export default Contact;

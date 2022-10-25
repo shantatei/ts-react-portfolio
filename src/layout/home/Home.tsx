@@ -15,14 +15,16 @@ const Home = () => {
 
   return (
     <Stack
+      id="home"
       display="flex"
       justifyContent="center"
       width="100%"
       alignItems="center"
+      sx={{ minHeight: "100vh" }}
     >
       <Avatar
         src={ProfilePic}
-        sx={{ width: 250, height: 250, marginTop: 2 }}
+        sx={{ width: 250, height: 250}}
       ></Avatar>
       <Typography variant="h4">Hi I'm Shanta</Typography>
       <Typography variant="h4" textAlign="center">

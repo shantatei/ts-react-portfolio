@@ -12,12 +12,11 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ThemeToggleButton from "./ThemeToggleButton";
-import { Link } from "react-router-dom";
 
 const pages = [
-  { name: "About", link: "/about" },
-  { name: "Projects", link: "/projects" },
-  { name: "Contact", link: "/contact" },
+  { name: "About", link: "#about" },
+  { name: "Projects", link: "#projects" },
+  { name: "Contact", link: "#contact" },
 ];
 
 const Navbar = () => {
@@ -35,16 +34,16 @@ const Navbar = () => {
     <>
       <AppBar position="fixed">
         <Container maxWidth="xl">
-          <Toolbar disableGutters >
+          <Toolbar disableGutters>
             <Typography
+              component={"a"}
               noWrap
               sx={{
                 display: { xs: "none", md: "flex" },
                 color: "inherit",
                 textDecoration: "inherit",
               }}
-              component={Link}
-              to="/"
+              href="#home"
             >
               Shanta
             </Typography>
@@ -58,8 +57,7 @@ const Navbar = () => {
               {pages.map((page) => (
                 <Button
                   key={page.name}
-                  component={Link}
-                  to={page.link}
+                  href={page.link}
                   sx={{
                     my: 2,
                     color: "inherit",
