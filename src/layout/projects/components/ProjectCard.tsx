@@ -6,12 +6,16 @@ import {
   Button,
   CardActionArea,
 } from "@mui/material";
+import { useColorMode } from "../../../context/ColorModeContext";
 
 const ProjectCard = ({ project }: any) => {
+  const { mode } = useColorMode();
+  const isDark = mode === "dark";
+
   return (
     <Card
       sx={{
-        ":hover": { boxShadow: "0 5px 10px grey" },
+        ":hover": { boxShadow: !isDark ? "0 5px 10px grey" : null },
         transition: "all ease-in 300ms",
       }}
     >

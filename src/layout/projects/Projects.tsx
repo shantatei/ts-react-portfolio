@@ -2,11 +2,7 @@ import React from "react";
 import {
   Typography,
   Stack,
-  Card,
-  CardHeader,
-  CardActions,
   Grid,
-  Button,
 } from "@mui/material";
 import ProjectCard from "./components/ProjectCard";
 
@@ -33,7 +29,7 @@ const projects= [
     name: "TradeSellBuy",
     description: "Year 2.1 E-Commerce Website Project",
     githubLink: "https://github.com/shantatei/tsb-frontend",
-    tags: ["React", "Laravel"],
+    tags: ["React", "Laravel","Redux"],
   },
 ];
 
