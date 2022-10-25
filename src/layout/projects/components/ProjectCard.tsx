@@ -26,12 +26,12 @@ const ProjectCard = ({project}: ProjectProps) => {
     >
       <CardActionArea href={project.githubLink}>
         <CardHeader title={project.name} subheader={project.description} />
-        <CardActions>
+        <CardActions >
           {project.tags.map((tag: string) => {
             return (
-              <Button variant="contained" color="success">
+              <Button variant="contained" color="success" >
                 {tag}
-              </Button>
+              </Button> 
             );
           })}
         </CardActions>

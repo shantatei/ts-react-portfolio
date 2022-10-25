@@ -20,7 +20,7 @@ const projects: Project[] = [
     name: "FoodView",
     description: "Year 1.2 Restaurant Review Website Project",
     githubLink: "https://github.com/shantatei/foodview",
-    tags: ["HTML", "CSS", "Javascript", "MySql"],
+    tags: ["HTML", "CSS", "JS", "MySql"],
   },
   {
     name: "Fitlah",
@@ -40,15 +40,18 @@ const Projects = () => {
   return (
     <Stack
       id="projects"
-      justifyContent="center"
       alignItems="center"
-      sx={{ minHeight: "100vh" }}
+      sx={{ 
+        minHeight: "100vh",
+        padding: '91.2px 0',
+        margin: '-91.2px 0' 
+      }}
     >
       <Typography variant="h4">Projects</Typography>
       <Grid container spacing="10" sx={{ maxWidth: "80%" }} mt={2}>
         {projects.map((project) => {
           return (
-            <Grid item key={project.name} lg={4} md={6} xs={12}>
+            <Grid item key={project.name}  md={6} xs={12}>
               <ProjectCard project={project} />
             </Grid>
           );

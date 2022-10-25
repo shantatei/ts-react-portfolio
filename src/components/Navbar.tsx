@@ -14,7 +14,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ThemeToggleButton from "./ThemeToggleButton";
 
 const pages = [
-  { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
   { name: "Contact", link: "#contact" },
 ];
@@ -32,22 +31,26 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar
+        position="fixed"
+      >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
               component={"a"}
               noWrap
               sx={{
-                display: { xs: "none", md: "flex" },
                 color: "inherit",
                 textDecoration: "inherit",
+                position: { xs: "absolute", md: 'block' },
+                left: { xs: '50%', md: '0' },
+                transform: { xs: 'translateX(-50%)', md: 'translateX(0%)' }
               }}
               href="#home"
             >
               Shanta
             </Typography>
-
+          
             <Box
               sx={{
                 display: { xs: "none", md: "flex" },
@@ -106,27 +109,9 @@ const Navbar = () => {
                 ))}
               </Menu>
             </Box>
-
-            <Typography
-              noWrap
-              component="a"
-              href=""
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              Shanta
-            </Typography>
           </Toolbar>
         </Container>
       </AppBar>
-
-      <Toolbar />
     </>
   );
 };

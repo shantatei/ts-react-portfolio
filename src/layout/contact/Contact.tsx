@@ -5,8 +5,11 @@ const Contact = () => {
   return (
     <Stack
       id="contact"
-      sx={{ minHeight: "100vh" }}
-      justifyContent="center"
+      sx={{
+        minHeight: "100vh",
+        padding: '91.2px 0',
+        margin: '-91.2px 0' 
+      }}
       alignItems="center"
     >
       <Typography variant="h4">Contact</Typography>
